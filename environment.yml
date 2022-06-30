@@ -1,0 +1,20 @@
+name: adni
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - matplotlib
+  - torchio=0.18
+  - pytorch=1.12
+  - scipy=1.8
+  - torchvision
+  - pandas=1.4.3
+  - numpy
+  - pytorch-lightning=1.6
+  - scikit-learn=1.1.1
+  - seaborn=0.11
+  - statsmodels=0.13
+  - cudatoolkit=11.3
+  - torchmetrics=0.9.1
