@@ -24,8 +24,8 @@ The main files to run are:
 - Recordings for which either FreeSurfer or SPM threw errors were discarded.
 - For the MCI analysis, recordings for which a classification into stable or progressive MCI according to our definition was not possible were discarded as well. (This was the case when there was no AD diagnosis during follow-up _and_ there was no follow-up data beyond 2 years.)
 - SPM processing was done using Matlab R2019a, FreeSurfer was v. 7.1.1.
-- For the logistic regression analysis, run [recon-all](https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all) followed by [asegstats2table](https://surfer.nmr.mgh.harvard.edu/fswiki/asegstats2table) and [aparsstats2table](https://surfer.nmr.mgh.harvard.edu/fswiki/aparsstats2table) in FreeSurfer, then use SPM12 and their volume quantification to [get ICV](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4265726/).
-- For the CNN analysis, use the recon-all (see above) output norm.mgz and transform it into MNI305 using [mri_vol2vol](https://surfer.nmr.mgh.harvard.edu/fswiki/mri_vol2vol) and the tailarach transform given by FreeSurfer, e.g., using `mri_vol2vol --mov norm.mgz --lta transforms/talairach.lta --o norm_mni305.nii --targ mri/mni305.cor.mgz`.
+- For the logistic regression analysis, run [recon-all](https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all) followed by [asegstats2table](https://surfer.nmr.mgh.harvard.edu/fswiki/asegstats2table) and [aparcstats2table](https://surfer.nmr.mgh.harvard.edu/fswiki/aparcstats2table) in FreeSurfer, then use SPM12 and their volume quantification to [get ICV](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4265726/). The FreeSurfer command will take a long time to run, i.e., 12-16 hours per recording (!) on our system.
+- For the CNN analysis, use the recon-all (see above) output norm.mgz and transform it into MNI305 using [mri_vol2vol](https://surfer.nmr.mgh.harvard.edu/fswiki/mri_vol2vol) and the tailarach transform given by FreeSurfer, e.g., using `mri_vol2vol --mov norm.mgz --lta transforms/talairach.lta --o norm_mni305.nii --targ mri/mni305.cor.mgz`. The output is a file called `norm_mni305.mgz` that should be used as the input for the CNN.
 
 --
 
