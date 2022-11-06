@@ -252,6 +252,6 @@ if __name__ == '__main__':
         f_ratios = [0, 0.25, 0.5, 0.75, 1.0]
         run_idces = range(0, 5)
         fold_idces = range(0, 5)
-        pool.starmap(train_model, product(*[f_ratios, run_idces, fold_idces, [split_var], [args.split_ver],
-                                            [args.feature_csv_dir], [args.split_dir], [args.log_dir], [args.chkpt_dir]]))
+        pool.starmap(train_model, product(*[f_ratios, run_idces, fold_idces, [split_var], [args.feature_csv_dir],
+                                            [args.split_dir], [args.log_dir], [args.chkpt_dir]]))
         pool.close()
